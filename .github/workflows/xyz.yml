@@ -1,0 +1,41 @@
+name: Terraform Demos
+
+on:
+  workflow_dispatch: # Isse UI par manual run ka button aa jayega
+
+jobs:
+  terraform:
+    runs-on: self-hosted
+
+    defaults:
+      run:
+        shell: cmd # Windows runner ke liye cmd force kar diya taaki fail na ho
+
+    steps:
+      # 1. Download repository code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Azure Login (Hardcoded without brackets)
+      - name: Azure Login   
+        run: az login --service-principal --username "sngupta6@aliazmat6584gmail.onmicrosoft.com" --password "Password@8866" --tenant "bf6129ba-9b64-4339-b4a4-4a6c4362b313"
+          
+      # 3. Check Azure Subscription
+      - name: Check Azure Account
+        run: az account show
+
+      # 4. Install/Setup Terraform
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      # 5. Terraform Init
+      - name: Terraform Init
+        run: terraform init
+
+      # 6. Terraform Plan
+      - name: Terraform Plan
+        run: terraform plan
+
+      # 7. Terraform Apply
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
