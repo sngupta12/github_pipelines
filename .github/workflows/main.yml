@@ -14,15 +14,9 @@ jobs:
         uses: actions/checkout@v4
 
       # Azure Login
-      - name: Azure Login        
-        run: |
-          az login 
-            --service-principal 
-            --username "<sngupta6@aliazmat6584gmail.onmicrosoft.com>" 
-            --password "<Password@8866>" 
-            --tenant "<bf6129ba-9b64-4339-b4a4-4a6c4362b313>"
-
-      # Check Azure Subscription
+      - name: Azure Login   
+       run: az login --service-principal --username "<sngupta6@aliazmat6584gmail.onmicrosoft.com>" --password "<Password@8866>" --tenant "<bf6129ba-9b64-4339-b4a4-4a6c4362b313>"
+            # Check Azure Subscription
       - name: Check Azure Account
         run: az account show
 
