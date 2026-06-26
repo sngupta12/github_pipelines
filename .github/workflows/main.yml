@@ -15,11 +15,12 @@ jobs:
 
       # Azure Login
       - name: Azure Login
+        shell: pwsh        
         run: |
-          az login \
-            --service-principal \
-            --username "<sngupta6@aliazmat6584gmail.onmicrosoft.com>" \
-            --password "<Password@8866>" \
+          az login 
+            --service-principal 
+            --username "<sngupta6@aliazmat6584gmail.onmicrosoft.com>" 
+            --password "<Password@8866>" 
             --tenant "<bf6129ba-9b64-4339-b4a4-4a6c4362b313>"
 
       # Check Azure Subscription
