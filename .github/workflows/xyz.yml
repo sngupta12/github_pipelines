@@ -18,7 +18,7 @@ jobs:
 
       # 2. Azure Login (Hardcoded without brackets)
       - name: Azure Login   
-        run: az login --service-principal --username "sngupta6@aliazmat6584gmail.onmicrosoft.com" --password "Password@8866" --tenant "bf6129ba-9b64-4339-b4a4-4a6c4362b313"
+        run: az login --service-principal --username "3084b2ef-1a59-43ff-b60a-7bb3da518f76" --password "71c2a066-de12-43a0-bf7a-29e7ca750aeb" --tenant "bf6129ba-9b64-4339-b4a4-4a6c4362b313"
           
       # 3. Check Azure Subscription
       - name: Check Azure Account
